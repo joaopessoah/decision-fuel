@@ -210,10 +210,10 @@ export default function Contato() {
                   <div>
                     <h3 className="font-semibold text-foreground mb-1">E-mail</h3>
                     <a
-                      href="mailto:contato@mais351.com.br"
+                      href="mailto:contato@mais351data.com.br"
                       className="text-muted-foreground hover:text-gold transition-colors"
                     >
-                      contato@mais351.com.br
+                      contato@mais351data.com.br
                     </a>
                   </div>
                 </div>
