@@ -35,7 +35,7 @@ export function Footer() {
             </p>
             <div className="flex items-center gap-4">
               <a
-                href="mailto:contato@351data.com"
+                href="mailto:contato@mais351.com.br"
                 className="text-muted-foreground hover:text-gold transition-colors"
                 aria-label="Email"
               >
@@ -100,13 +100,13 @@ export function Footer() {
               <div className="flex items-start gap-3">
                 <Mail size={18} className="text-gold mt-0.5" />
                 <span className="text-muted-foreground text-sm">
-                  contato@351data.com
+                  contato@mais351.com.br
                 </span>
               </div>
               <div className="flex items-start gap-3">
                 <MapPin size={18} className="text-gold mt-0.5" />
                 <span className="text-muted-foreground text-sm">
-                  Portugal & Brasil
+                  Brasil & Portugal
                 </span>
               </div>
             </div>

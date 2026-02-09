@@ -210,10 +210,10 @@ export default function Contato() {
                   <div>
                     <h3 className="font-semibold text-foreground mb-1">E-mail</h3>
                     <a
-                      href="mailto:contato@351data.com"
+                      href="mailto:contato@mais351.com.br"
                       className="text-muted-foreground hover:text-gold transition-colors"
                     >
-                      contato@351data.com
+                      contato@mais351.com.br
                     </a>
                   </div>
                 </div>
@@ -242,7 +242,7 @@ export default function Contato() {
                   <div>
                     <h3 className="font-semibold text-foreground mb-1">Atuação</h3>
                     <p className="text-muted-foreground">
-                      Portugal & Brasil
+                      Brasil & Portugal
                     </p>
                     <p className="text-sm text-muted-foreground/60 mt-1">
                       Atendimento remoto em todo o território
