@@ -30,12 +30,12 @@ export function Footer() {
               </span>
             </Link>
             <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-              Transformamos dados em decisões estratégicas. 
+              Transformamos dados em decisões estratégicas.
               Consultoria especializada para empresas que precisam decidir melhor.
             </p>
             <div className="flex items-center gap-4">
               <a
-                href="mailto:contato@351data.com"
+                href="mailto:contato@mais351data.com.br"
                 className="text-muted-foreground hover:text-gold transition-colors"
                 aria-label="Email"
               >
@@ -100,13 +100,13 @@ export function Footer() {
               <div className="flex items-start gap-3">
                 <Mail size={18} className="text-gold mt-0.5" />
                 <span className="text-muted-foreground text-sm">
-                  contato@351data.com
+                  contato@mais351data.com.br
                 </span>
               </div>
               <div className="flex items-start gap-3">
                 <MapPin size={18} className="text-gold mt-0.5" />
                 <span className="text-muted-foreground text-sm">
-                  Portugal & Brasil
+                  Brasil & Portugal
                 </span>
               </div>
             </div>

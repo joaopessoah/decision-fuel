@@ -1,39 +1,22 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Mail, Linkedin, MapPin, Send, CheckCircle } from "lucide-react";
+import { useForm, ValidationError } from '@formspree/react';
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { useToast } from "@/hooks/use-toast";
 
 export default function Contato() {
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
-  const { toast } = useToast();
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    
-    setIsSubmitting(false);
-    setIsSubmitted(true);
-    toast({
-      title: "Mensagem enviada!",
-      description: "Entraremos em contato em breve.",
-    });
-  };
-
+  const [state, handleSubmit] = useForm("xwvrndkp");
+  
   return (
     <Layout>
       {/* Hero Section */}
       <section className="section-padding bg-gradient-dark relative overflow-hidden">
         <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-gold/5 rounded-full blur-3xl" />
-        
+
         <div className="container-tight relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -66,7 +49,7 @@ export default function Contato() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              {isSubmitted ? (
+              {state.succeeded ? (
                 <div className="glass-card rounded-2xl p-12 text-center">
                   <div className="w-20 h-20 rounded-full bg-gold/10 flex items-center justify-center mx-auto mb-6">
                     <CheckCircle className="w-10 h-10 text-gold" />
@@ -79,7 +62,7 @@ export default function Contato() {
                   </p>
                   <Button
                     variant="goldOutline"
-                    onClick={() => setIsSubmitted(false)}
+                    onClick={() => window.location.reload()}
                   >
                     Enviar nova mensagem
                   </Button>
@@ -101,6 +84,7 @@ export default function Contato() {
                           required
                           className="bg-secondary border-border"
                         />
+                        <ValidationError prefix="Name" field="name" errors={state.errors} className="text-destructive text-sm" />
                       </div>
                       <div className="space-y-2">
                         <Label htmlFor="email">E-mail</Label>
@@ -112,6 +96,7 @@ export default function Contato() {
                           required
                           className="bg-secondary border-border"
                         />
+                        <ValidationError prefix="Email" field="email" errors={state.errors} className="text-destructive text-sm" />
                       </div>
                     </div>
                     <div className="grid sm:grid-cols-2 gap-4">
@@ -160,15 +145,16 @@ export default function Contato() {
                         required
                         className="bg-secondary border-border resize-none"
                       />
+                      <ValidationError prefix="Message" field="message" errors={state.errors} className="text-destructive text-sm" />
                     </div>
                     <Button
                       type="submit"
                       variant="gold"
                       size="lg"
                       className="w-full"
-                      disabled={isSubmitting}
+                      disabled={state.submitting}
                     >
-                      {isSubmitting ? (
+                      {state.submitting ? (
                         <>
                           <span className="animate-spin mr-2">⏳</span>
                           Enviando...
@@ -210,10 +196,10 @@ export default function Contato() {
                   <div>
                     <h3 className="font-semibold text-foreground mb-1">E-mail</h3>
                     <a
-                      href="mailto:contato@351data.com"
+                      href="mailto:contato@mais351data.com.br"
                       className="text-muted-foreground hover:text-gold transition-colors"
                     >
-                      contato@351data.com
+                      contato@mais351data.com.br
                     </a>
                   </div>
                 </div>
@@ -225,7 +211,7 @@ export default function Contato() {
                   <div>
                     <h3 className="font-semibold text-foreground mb-1">LinkedIn</h3>
                     <a
-                      href="https://linkedin.com/company/351data"
+                      href="https://www.linkedin.com/company/mais-351-data"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-muted-foreground hover:text-gold transition-colors"
@@ -242,7 +228,7 @@ export default function Contato() {
                   <div>
                     <h3 className="font-semibold text-foreground mb-1">Atuação</h3>
                     <p className="text-muted-foreground">
-                      Portugal & Brasil
+                      Brasil & Portugal
                     </p>
                     <p className="text-sm text-muted-foreground/60 mt-1">
                       Atendimento remoto em todo o território
@@ -257,7 +243,7 @@ export default function Contato() {
                   "Dados organizados mudam decisões."
                 </p>
                 <p className="text-sm text-muted-foreground">
-                  — +351 Data
+                  +351 Data
                 </p>
               </div>
             </motion.div>
