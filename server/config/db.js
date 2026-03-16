@@ -13,4 +13,17 @@ const pool = mysql.createPool({
   queueLimit: 0
 });
 
+/**
+ * Retorna a data/hora atual no fuso horário de Brasília (UTC-3)
+ * no formato 'YYYY-MM-DD HH:mm:ss' — compatível com MySQL DATETIME.
+ */
+export function getBrasiliaTime() {
+  return new Intl.DateTimeFormat('sv-SE', {
+    timeZone: 'America/Sao_Paulo',
+    year: 'numeric', month: '2-digit', day: '2-digit',
+    hour: '2-digit', minute: '2-digit', second: '2-digit',
+    hour12: false
+  }).format(new Date());
+}
+
 export default pool;

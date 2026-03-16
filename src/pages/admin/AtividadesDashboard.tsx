@@ -43,7 +43,7 @@ export default function AtividadesDashboard() {
       lead_id: Number(formData.lead_id),
       tipo: formData.tipo as any,
       descricao: formData.descricao,
-      data_atividade: new Date(formData.data_atividade).toISOString(),
+      data_atividade: formData.data_atividade.replace('T', ' ') + ':00',
       status: 'Pendente'
     });
     
