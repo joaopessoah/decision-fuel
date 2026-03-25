@@ -2,7 +2,7 @@ import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { Atividade } from '../types/crm';
 import { toast } from 'sonner';
 
-const API_URL = 'http://localhost:3000/api/atividades'; 
+const API_URL = `${import.meta.env.VITE_API_URL || 'http://localhost:3000'}/api/atividades`;
 
 export function useAtividadesApi(leadId?: number) {
   const queryClient = useQueryClient();

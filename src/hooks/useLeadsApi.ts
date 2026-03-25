@@ -2,7 +2,7 @@ import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { Lead } from '../types/crm';
 import { toast } from 'sonner';
 
-const API_URL = 'http://localhost:3000/api/leads'; // Em produção isso precisará apontar para a origin correta
+const API_URL = `${import.meta.env.VITE_API_URL || 'http://localhost:3000'}/api/leads`;
 
 export function useLeadsApi() {
   const queryClient = useQueryClient();
