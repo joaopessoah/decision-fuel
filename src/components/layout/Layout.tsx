@@ -15,7 +15,7 @@ export function Layout({ children }: LayoutProps) {
 
       {/* Botão flutuante do WhatsApp */}
       <a
-        href="https://wa.me/5511950492627"
+        href="https://wa.me/5511950492627?text=Ol%C3%A1.%20Vim%20pelo%20site%20da%20%2B351%20Data.%20Gostaria%20de%20saber%20mais%20informa%C3%A7%C3%B5es.%20Fico%20no%20aguardo%20do%20seu%20retorno."
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Fale conosco pelo WhatsApp"
