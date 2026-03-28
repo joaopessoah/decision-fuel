@@ -20,9 +20,9 @@ export function Navbar() {
   const location = useLocation();
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border/50">
+    <nav className="fixed top-4 left-4 right-4 z-50 bg-background/80 backdrop-blur-xl border border-border/50 rounded-2xl shadow-lg shadow-black/20">
       <div className="container-tight">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
             <span className="text-2xl font-display font-bold">
@@ -64,7 +64,7 @@ export function Navbar() {
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden p-2 text-foreground"
+            className="lg:hidden p-2 text-foreground cursor-pointer hover:text-gold transition-colors"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
           >
@@ -80,7 +80,7 @@ export function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-background border-b border-border"
+            className="lg:hidden bg-background/95 backdrop-blur-xl border-t border-border/30 rounded-b-2xl"
           >
             <div className="container-tight py-6 flex flex-col gap-4">
               {navLinks.map((link) => (

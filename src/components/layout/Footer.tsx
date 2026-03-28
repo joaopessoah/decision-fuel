@@ -36,16 +36,16 @@ export function Footer() {
             <div className="flex items-center gap-4">
               <a
                 href="mailto:contato@mais351data.com.br"
-                className="text-muted-foreground hover:text-gold transition-colors"
+                className="text-muted-foreground hover:text-gold transition-colors cursor-pointer p-2 -m-2 rounded-lg hover:bg-gold/5"
                 aria-label="Email"
               >
                 <Mail size={20} />
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/company/mais-351-data"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-gold transition-colors"
+                className="text-muted-foreground hover:text-gold transition-colors cursor-pointer p-2 -m-2 rounded-lg hover:bg-gold/5"
                 aria-label="LinkedIn"
               >
                 <Linkedin size={20} />
